@@ -44,9 +44,9 @@ This is a solution to the [Space tourism website challenge on Frontend Mentor](h
 
 ![home](./src/screenshots/mobile/home.png)
 ![destinations](./src/screenshots/mobile/destinations.png)
-![crew](./public/screenshots/mobile/crew.png)
-![technology](./public/screenshots/mobile/technology.png)
-![menu](./public/screenshots/mobile/menu.png)
+![crew](./src/screenshots/mobile/crew.png)
+![technology](./src/screenshots/mobile/technology.png)
+![menu](./src/screenshots/mobile/menu.png)
 
 ### Links
 
