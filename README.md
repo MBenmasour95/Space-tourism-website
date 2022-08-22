@@ -70,7 +70,7 @@ This is a solution to the [Space tourism website challenge on Frontend Mentor](h
 
 ## Deployment
 
--[Netlify](https://www.netlify.com)
+- [Netlify](https://www.netlify.com)
 
 ## Author
 
