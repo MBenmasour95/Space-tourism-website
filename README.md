@@ -28,22 +28,22 @@ This is a solution to the [Space tourism website challenge on Frontend Mentor](h
 
 #### Desktop
 
-![home](./public/screenshots/desktop/home.png)
-![destinations](./public/screenshots/desktop/destinations.png)
-![crew](./public/screenshots/desktop/crew.png)
-![technology](./public/screenshots/desktop/technology.png)
+![home](./src/screenshots/desktop/home.png)
+![destinations](./src/screenshots/desktop/destinations.png)
+![crew](./src/screenshots/desktop/crew.png)
+![technology](./src/screenshots/desktop/technology.png)
 
 #### Tablet
 
-![home](./public/screenshots/tablet/home.png)
-![destinations](./public/screenshots/tablet/destinations.png)
-![crew](./public/screenshots/tablet/crew.png)
-![technology](./public/screenshots/tablet/technology.png)
+![home](./src/screenshots/tablet/home.png)
+![destinations](./src/screenshots/tablet/destinations.png)
+![crew](./src/screenshots/tablet/crew.png)
+![technology](./src/screenshots/tablet/technology.png)
 
 #### Mobile
 
-![home](./public/screenshots/mobile/home.png)
-![destinations](./public/screenshots/mobile/destinations.png)
+![home](./src/screenshots/mobile/home.png)
+![destinations](./src/screenshots/mobile/destinations.png)
 ![crew](./public/screenshots/mobile/crew.png)
 ![technology](./public/screenshots/mobile/technology.png)
 ![menu](./public/screenshots/mobile/menu.png)
