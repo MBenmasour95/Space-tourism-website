@@ -1,0 +1,75 @@
+@import "./variables.scss";
+@import "./mixins";
+
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  @include typography($white, $fs-7, $ff-1, null, null);
+  min-height: 100vh;
+}
+
+#root {
+  position: relative;
+  min-height: inherit;
+  overflow: hidden;
+}
+
+main,
+section {
+  min-height: inherit;
+}
+
+header {
+  @include positionAbsolute(0, 0, null, null, 100%, 10rem);
+  z-index: 100;
+
+  @include breakpoints($xxl) {
+    height: 14rem;
+  }
+
+  @include breakpoints($lg) {
+    height: 8rem;
+  }
+}
+
+footer {
+  @include positionAbsolute(0, null, null, 0, 100%, 4rem);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-transform: uppercase;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+button {
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+img {
+  height: 100%;
+  width: 100%;
+}

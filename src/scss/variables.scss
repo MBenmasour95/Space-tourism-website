@@ -1,0 +1,41 @@
+/* === Colors === */
+$darkBlue: hsl(230, 35%, 7%);
+$desaturateBlue: hsl(231, 10%, 42%);
+$paleBlue: hsl(231, 77%, 90%);
+$white: hsl(0, 0%, 100%);
+
+/* === Font === */
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Bellefair&display=swap");
+
+$ff-1: "Barlow Condensed", sans-serif;
+$ff-2: "Bellefair", serif;
+$fs-1: 15rem;
+$fs-2: 10rem;
+$fs-3: 5.6rem;
+$fs-4: 3.2rem;
+$fs-5: 2.8rem;
+$fs-6: 1.8rem;
+$fs-7: 1.6rem;
+$fs-8: 1.4rem;
+$fs-9: 1.2rem;
+$fs-10: 1rem;
+
+/* === Opacity === */
+$opacity-1: 100%;
+$opacity-2: 50%;
+$opacity-3: 40%;
+$opacity-4: 25%;
+
+/* === Border Radius === */
+$radius: 50%;
+
+/* === Transition === */
+$transition-1: all 300ms ease-in-out;
+$transition-2: transform 500ms linear;
+
+/* === Breakpoints === */
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1280px;
+$xxl: 1440px;

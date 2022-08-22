@@ -1,0 +1,21 @@
+footer {
+  @include flexbox(row, center, center, nowrap, null);
+
+  .attribution {
+    @include typography(null, $fs-8, $ff-1, null, null);
+
+    a {
+      @include typography($paleBlue, $fs-8, $ff-2, null, null);
+      margin-left: 0.5rem;
+      text-decoration: underline;
+    }
+
+    @include breakpoints($sm) {
+      font-size: $fs-10;
+
+      a {
+        font-size: $fs-9;
+      }
+    }
+  }
+}

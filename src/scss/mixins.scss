@@ -1,0 +1,48 @@
+@mixin background($url) {
+  background: url($url) no-repeat center center / cover;
+}
+
+@mixin positionAbsolute($left, $top, $right, $bottom, $width, $height) {
+  position: absolute;
+  left: $left;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  width: $width;
+  height: $height;
+}
+
+@mixin flexbox($direction, $justifyContent, $alignItems, $wrap, $gap) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justifyContent;
+  align-items: $alignItems;
+  flex-wrap: $wrap;
+  gap: $gap;
+}
+
+@mixin typography($color, $fs, $ff, $lineHeight, $letterSpacing) {
+  color: $color;
+  font: $fs $ff;
+  line-height: $lineHeight;
+  letter-spacing: $letterSpacing;
+}
+
+@mixin button($background, $color, $ff, $fs, $border) {
+  background-color: $background;
+  color: $color;
+  font: $fs $ff;
+  border: $border;
+}
+
+@mixin breakpoints($screen) {
+  @if $screen == $xxl {
+    @media (min-width: $screen) {
+      @content;
+    }
+  } @else {
+    @media (max-width: $screen) {
+      @content;
+    }
+  }
+}

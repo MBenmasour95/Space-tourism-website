@@ -1,0 +1,216 @@
+.technology-wrapper {
+  @include background(
+    "../../../public/assets/technology/background-technology-desktop.jpg"
+  );
+  padding: 10rem 8rem 4rem;
+  position: relative;
+
+  .sub-heading-1 {
+    span {
+      color: $desaturateBlue;
+      font-weight: bolder;
+    }
+  }
+
+  .row {
+    @include flexbox(row, flex-start, center, nowrap, null);
+    height: 45rem;
+    overflow: clip;
+    overflow-x: visible;
+
+    .numbers {
+      @include flexbox(column, center, flex-start, nowrap, 4rem);
+      flex-basis: 10%;
+
+      .number-btn {
+        @include button(
+          transparent,
+          $white,
+          $ff-2,
+          $fs-4,
+          0.1rem solid rgba(255, 255, 255, 0.2)
+        );
+        width: 5rem;
+        height: 5rem;
+        border-radius: $radius;
+        transition: $transition-1;
+
+        &:hover {
+          border-color: $white;
+        }
+
+        &.active {
+          background-color: $white;
+          color: $darkBlue;
+        }
+      }
+    }
+
+    .carousel {
+      flex: 1;
+      height: 100%;
+      position: relative;
+
+      .slides {
+        @include positionAbsolute(0, 0, null, null, 100%, 100%);
+        transition: $transition-2;
+
+        .slide {
+          @extend .slides;
+          @include flexbox(row, space-between, center, nowrap, null);
+
+          .col-1 {
+            flex-basis: 50%;
+
+            .paragraph {
+              width: 70%;
+            }
+          }
+
+          .col-2 {
+            position: relative;
+            flex-basis: 40%;
+            height: 100%;
+
+            img {
+              @include positionAbsolute(null, 0, -8rem, null, null, null);
+              object-fit: contain;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @include breakpoints($xxl) {
+    .row {
+      height: 70rem;
+    }
+  }
+
+  @include breakpoints($xl) {
+    & {
+      @media (min-height: 768px) {
+        .row {
+          height: 60rem;
+        }
+      }
+    }
+  }
+
+  @include breakpoints($lg) {
+    .row {
+      height: 100rem;
+
+      .carousel {
+        .slides {
+          .slide {
+            flex-direction: column;
+            justify-content: center;
+
+            .col-1 {
+              @include flexbox(column, center, center, nowrap, 2rem);
+
+              .paragraph {
+                width: 80%;
+                text-align: center;
+              }
+            }
+
+            .col-2 {
+              flex-basis: 60%;
+              width: 100%;
+
+              img {
+                right: 50%;
+                transform: translateX(50%);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @include breakpoints($md) {
+    @include background(
+      "../../../public/assets/technology/background-technology-tablet.jpg"
+    );
+    padding: 10rem 0 4rem;
+
+    .sub-heading-1 {
+      margin-left: 5rem;
+    }
+
+    .row {
+      height: 85rem;
+
+      .numbers {
+        @include positionAbsolute(50%, 52%, null, null, null, null);
+        flex-direction: row;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+      }
+
+      .carousel {
+        .slides {
+          .slide {
+            justify-content: space-between;
+
+            .col-1 {
+              order: 2;
+            }
+
+            .col-2 {
+              flex-basis: 40%;
+
+              img {
+                width: 100vw;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @include breakpoints($sm) {
+    @include background(
+      "../../../public/assets/technology/background-technology-mobile.jpg"
+    );
+
+    .sub-heading-1 {
+      margin-left: 0;
+      text-align: center;
+      font-size: $fs-7;
+    }
+
+    .row {
+      height: 70rem;
+
+      .numbers {
+        top: 42%;
+      }
+
+      .carousel {
+        .slides {
+          .slide {
+            .col-1 {
+              .heading-3 {
+                font-size: $fs-4;
+              }
+
+              .paragraph {
+                width: 95%;
+              }
+            }
+
+            .col-2 {
+              flex-basis: 25%;
+            }
+          }
+        }
+      }
+    }
+  }
+}

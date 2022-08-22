@@ -1,0 +1,174 @@
+.navbar {
+  @include flexbox(row, space-between, center, nowrap, null);
+  height: 100%;
+
+  .nav-logo {
+    width: 4rem;
+    height: 4rem;
+    margin-left: 4rem;
+  }
+
+  .nav-items {
+    @include flexbox(row, center, center, nowrap, 4rem);
+    position: relative;
+    flex: 0.6;
+    height: 7rem;
+    background-color: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(20.5485px);
+
+    &:before {
+      content: "";
+      @include positionAbsolute(-60%, 50%, null, null, 70%, 0.1rem);
+      transform: translateY(-50%);
+      background-color: $white;
+      opacity: $opacity-4;
+    }
+
+    .nav-item:nth-of-type(1) {
+      display: none;
+    }
+
+    .nav-link {
+      @include typography($white, $fs-6, $ff-1, null, 0.2rem);
+      position: relative;
+
+      span {
+        font-weight: bolder;
+      }
+
+      &:after {
+        @include positionAbsolute(0, null, null, -2.4rem, 0, 0.2rem);
+        content: "";
+        background-color: $white;
+        opacity: $opacity-2;
+        transition: $transition-1;
+      }
+
+      &:hover:after {
+        width: 100%;
+      }
+
+      &.link-active:after {
+        width: 100%;
+        opacity: $opacity-1;
+      }
+    }
+  }
+
+  .open-menu {
+    display: none;
+  }
+
+  @include breakpoints($xxl) {
+    .nav-logo {
+      width: 5rem;
+      height: 5rem;
+    }
+
+    .nav-items {
+      height: 9rem;
+
+      .nav-link {
+        &:after {
+          bottom: -3.2rem;
+        }
+      }
+    }
+  }
+
+  @include breakpoints($xl) {
+    .nav-items {
+      flex: 0.7;
+
+      &:before {
+        left: -35%;
+        width: 40%;
+      }
+    }
+  }
+
+  @include breakpoints($lg) {
+    .nav-items {
+      height: 100%;
+      gap: 3rem;
+      backdrop-filter: blur(500px);
+
+      &:before {
+        display: none;
+      }
+
+      .nav-link {
+        span {
+          display: none;
+        }
+
+        &:after {
+          bottom: -2.7rem;
+        }
+      }
+    }
+  }
+
+  @include breakpoints($sm) {
+    padding: 0 3rem;
+
+    .nav-logo {
+      margin-left: 0;
+    }
+
+    .nav-items {
+      @include positionAbsolute(null, 0, -70%, null, 70%, 100vh);
+      @include flexbox(column, flex-start, flex-start, nowrap, 6rem);
+      backdrop-filter: blur(40.5485px);
+      padding: 2.4rem 4rem;
+      transition: $transition-1;
+      z-index: 100;
+
+      &.fade-in {
+        right: 0;
+      }
+
+      .nav-item:nth-of-type(1) {
+        align-self: flex-end;
+        display: block;
+
+        .close-menu {
+          @include button(transparent, null, null, null, none);
+          width: 2.2rem;
+          height: 2.2rem;
+        }
+      }
+
+      .nav-item:not(:nth-of-type(1)) {
+        width: 100%;
+      }
+
+      .nav-link {
+        width: 100%;
+        display: inline-block;
+
+        span {
+          display: inline-block;
+        }
+
+        &:after {
+          left: calc(100% + 3.2rem);
+          top: 50%;
+          transform: translateY(-50%);
+        }
+
+        &.link-active:after {
+          width: 0.8rem;
+          height: 4.5rem;
+        }
+      }
+    }
+
+    .open-menu {
+      @include button(transparent, null, null, null, none);
+      width: 2.8rem;
+      height: 2.2rem;
+      display: block;
+    }
+  }
+}

@@ -1,0 +1,26 @@
+.error-page {
+  background-color: $darkBlue;
+  padding: 10rem;
+
+  a {
+    @include typography($paleBlue, $fs-6, $ff-1, null, null);
+    text-decoration: underline;
+  }
+
+  .heading-2 {
+    @include positionAbsolute(50%, 50%, null, null, max-content, null);
+    transform: translate(-50%, -50%);
+
+    @include breakpoints($lg) {
+      font-size: $fs-3;
+    }
+
+    @include breakpoints($md) {
+      font-size: $fs-4;
+    }
+  }
+
+  @include breakpoints($sm) {
+    padding: 10rem 2rem 0;
+  }
+}

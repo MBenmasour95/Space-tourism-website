@@ -1,0 +1,319 @@
+.crew-wrapper {
+  @include background(
+    "../../../public/assets/crew/background-crew-desktop.jpg"
+  );
+  padding: 10rem 8rem 4rem;
+  position: relative;
+
+  .sub-heading-1 {
+    span {
+      color: $desaturateBlue;
+      font-weight: bolder;
+    }
+  }
+
+  .carousel {
+    position: relative;
+    height: 45rem;
+    overflow: clip;
+    overflow-y: visible;
+
+    .slides {
+      @include positionAbsolute(0, 0, null, null, 100%, 100%);
+      transition: $transition-2;
+
+      .slide {
+        @extend .slides;
+        @include flexbox(row, space-between, center, nowrap, null);
+
+        .col-1 {
+          flex-basis: 60%;
+          min-height: 30rem;
+
+          .heading-4 {
+            opacity: $opacity-2;
+          }
+
+          .paragraph {
+            width: 50%;
+          }
+        }
+
+        .col-2 {
+          position: relative;
+          flex-basis: 40%;
+          height: 100%;
+
+          img {
+            @include positionAbsolute(0, null, null, -4rem, null, 110%);
+            object-fit: contain;
+          }
+        }
+      }
+    }
+  }
+
+  .bullets {
+    @include positionAbsolute(8rem, null, null, 6rem, 12rem, 3rem);
+    @include flexbox(null, space-between, center, nowrap, null);
+
+    .bullet {
+      width: 1.5rem;
+      height: 1.5rem;
+      background-color: $white;
+      cursor: pointer;
+      opacity: $opacity-4;
+      border-radius: $radius;
+      transition: $transition-1;
+
+      &:hover {
+        opacity: $opacity-2;
+      }
+
+      &.bullet-active {
+        opacity: $opacity-1;
+      }
+    }
+  }
+
+  @include breakpoints($xxl) {
+    .carousel {
+      height: 70rem;
+    }
+
+    .slide {
+      .col-2 {
+        flex-basis: 50% !important;
+
+        img {
+          bottom: -12rem !important;
+        }
+      }
+    }
+
+    .slide:nth-of-type(4) {
+      .col-2 {
+        img {
+          bottom: -14.8rem !important;
+        }
+      }
+    }
+  }
+
+  @include breakpoints($xl) {
+    & {
+      @media (min-height: 768px) {
+        .carousel {
+          height: 60rem;
+        }
+
+        .slide {
+          .col-2 {
+            flex-basis: 50% !important;
+
+            img {
+              bottom: -12rem !important;
+            }
+          }
+        }
+
+        .slide:nth-of-type(4) {
+          .col-2 {
+            img {
+              bottom: -14.8rem !important;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @include breakpoints($lg) {
+    .carousel {
+      .slides {
+        .slide {
+          flex-wrap: wrap;
+
+          .col-1 {
+            flex-basis: 100%;
+            padding: 5rem 0;
+            text-align: center;
+
+            .paragraph {
+              margin: 0 auto;
+              width: 60%;
+            }
+          }
+
+          .col-2 {
+            flex-basis: 100% !important;
+
+            img {
+              bottom: -12rem !important;
+            }
+          }
+        }
+      }
+    }
+
+    .bullets {
+      left: 50%;
+      top: 45%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  @include breakpoints($lg) {
+    & {
+      @media (max-height: 720px) {
+        .carousel {
+          height: 80rem;
+
+          .slides {
+            .slide {
+              .col-2 {
+                height: 48rem;
+                img {
+                  left: 50%;
+                  bottom: 0 !important;
+                  width: 60%;
+                  transform: translateX(-50%);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @include breakpoints($md) {
+    @include background(
+      "../../../public/assets/crew/background-crew-tablet.jpg"
+    );
+
+    .carousel {
+      .slides {
+        .slide {
+          .col-1 {
+            .heading-4 {
+              font-size: $fs-5;
+            }
+
+            .heading-3 {
+              font-size: 4rem;
+            }
+
+            .paragraph {
+              width: 100%;
+            }
+          }
+
+          .col-2 {
+            img {
+              left: 50%;
+              bottom: -4rem !important;
+              transform: translateX(-50%);
+              width: 70%;
+            }
+          }
+        }
+
+        .slide:nth-of-type(2) {
+          .col-2 {
+            img {
+              width: 60%;
+            }
+          }
+        }
+
+        .slide:nth-of-type(3) {
+          .col-2 {
+            img {
+              width: 75%;
+            }
+          }
+        }
+
+        .slide:nth-of-type(4) {
+          .col-2 {
+            img {
+              width: 84%;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @include breakpoints($sm) {
+    @include background(
+      "../../../public/assets/crew/background-crew-mobile.jpg"
+    );
+    padding: 8rem 2rem 4rem;
+
+    .sub-heading-1 {
+      text-align: center;
+      font-size: $fs-7;
+    }
+
+    .carousel {
+      height: 100vh;
+
+      .slides {
+        .slide {
+          .col-1 {
+            order: 2;
+          }
+
+          .col-1 {
+            .heading-4 {
+              font-size: $fs-6;
+            }
+
+            .heading-3 {
+              font-size: $fs-5;
+            }
+
+            .paragraph {
+              font-size: $fs-7;
+            }
+          }
+
+          .col-2 {
+            height: 28rem !important;
+
+            &:after {
+              @include positionAbsolute(0, null, null, 0, 100%, 0.1rem);
+              content: "";
+              background-color: $white;
+              opacity: $opacity-4;
+            }
+
+            img {
+              left: 50%;
+              bottom: 0 !important;
+              transform: translateX(-50%);
+              width: 50% !important;
+              height: auto;
+              object-fit: cover;
+            }
+          }
+        }
+
+        .slide:nth-of-type(3) {
+          margin-top: 0.8rem;
+        }
+      }
+    }
+    .bullets {
+      top: 54%;
+      width: 10rem;
+
+      .bullet {
+        width: 1.2rem;
+        height: 1.2rem;
+      }
+    }
+  }
+}

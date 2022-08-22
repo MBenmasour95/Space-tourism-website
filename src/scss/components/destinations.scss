@@ -1,0 +1,201 @@
+.destinations-wrapper {
+  @include background(
+    "../../../public/assets/destination/background-destination-desktop.jpg"
+  );
+  padding: 10rem 8rem 4rem;
+
+  span {
+    color: $desaturateBlue;
+    font-weight: bolder;
+  }
+
+  .row {
+    @include flexbox(null, space-around, center, nowrap, null);
+    min-height: 45rem;
+
+    .col-1 {
+      @include flexbox(null, center, center, null, null);
+      flex-basis: 40rem;
+      height: inherit;
+
+      .img-box {
+        width: 70%;
+      }
+    }
+
+    .col-2 {
+      @include flexbox(column, space-between, flex-start, nowrap, null);
+      flex-basis: 40rem;
+      height: 42rem;
+
+      .tabs {
+        @include flexbox(null, flex-start, null, nowrap, 4rem);
+
+        .tab-btn {
+          @include button(transparent, $paleBlue, $ff-1, $fs-6, none);
+          position: relative;
+          text-transform: uppercase;
+          letter-spacing: 0.2rem;
+
+          &:after {
+            @include positionAbsolute(0, null, null, -1.5rem, 0, 0.2rem);
+            content: "";
+            transition: $transition-1;
+          }
+
+          &:hover:after {
+            width: 100%;
+            background-color: $white;
+            opacity: $opacity-2;
+          }
+
+          &.active {
+            color: $white;
+
+            &:after {
+              width: 100%;
+              background-color: $white;
+              opacity: $opacity-1;
+            }
+          }
+        }
+      }
+    }
+
+    .content-center {
+      .paragraph {
+        width: 90%;
+      }
+    }
+
+    hr {
+      width: 100%;
+      height: 0.1rem;
+      border: none;
+      background-color: $desaturateBlue;
+      opacity: $opacity-3;
+    }
+
+    .content-bottom {
+      @include flexbox(row, center, null, nowrap, null);
+      width: 100%;
+
+      div {
+        flex-basis: 50%;
+      }
+    }
+  }
+
+  @include breakpoints($xxl) {
+    .row {
+      min-height: 70rem;
+    }
+  }
+
+  @include breakpoints($lg) {
+    padding: 12rem 8rem 8rem;
+
+    .row {
+      flex-wrap: wrap;
+
+      .col-1 {
+        flex-basis: 100%;
+        height: 50rem;
+
+        .img-box {
+          width: 40%;
+        }
+      }
+
+      .col-2 {
+        flex-basis: 100%;
+        align-items: center;
+
+        .content-center {
+          text-align: center;
+
+          .paragraph {
+            width: 80%;
+            margin: 0 auto;
+          }
+        }
+
+        .content-bottom {
+          div {
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+
+  @include breakpoints($md) {
+    @include background(
+      "../../../public/assets/destination/background-destination-tablet.jpg"
+    );
+
+    .row {
+      .col-1 {
+        .img-box {
+          width: 50%;
+        }
+      }
+    }
+  }
+
+  @include breakpoints($sm) {
+    @include background(
+      "../../../public/assets/destination/background-destination-mobile.jpg"
+    );
+    padding: 12rem 2rem 8rem;
+
+    .sub-heading-1 {
+      text-align: center;
+      font-size: $fs-7;
+    }
+
+    .row {
+      .col-1 {
+        height: 40rem;
+
+        .img-box {
+          width: 70%;
+        }
+      }
+
+      .col-2 {
+        height: 50rem;
+
+        .tabs {
+          gap: 3rem;
+
+          .tab-btn {
+            font-size: $fs-8;
+          }
+        }
+
+        .content-center {
+          .heading-2 {
+            font-size: $fs-3;
+            margin: 4rem 0 2rem;
+          }
+
+          .paragraph {
+            width: 100%;
+            margin-bottom: 2rem;
+          }
+        }
+
+        .content-bottom {
+          flex-wrap: wrap;
+          gap: 4rem;
+          padding-top: 2rem;
+
+          div {
+            flex-basis: 100%;
+          }
+        }
+      }
+    }
+  }
+}

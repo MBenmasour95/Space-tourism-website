@@ -1,0 +1,103 @@
+.home-wrapper {
+  @include background(
+    "../../../public/assets/home/background-home-desktop.jpg"
+  );
+  @include flexbox(row, space-between, flex-end, nowrap, null);
+  padding: 10rem;
+
+  .col-1 {
+    flex-basis: 40rem;
+  }
+
+  .col-2 {
+    @include flexbox(null, center, center, nowrap, null);
+    flex-basis: 50rem;
+    height: 30rem;
+    position: relative;
+
+    .btn {
+      @include button($white, $darkBlue, $ff-2, $fs-4, none);
+      width: 20rem;
+      height: 20rem;
+      text-transform: uppercase;
+      border-radius: $opacity-2;
+      transition: $transition-1;
+
+      &:hover {
+        box-shadow: 0 0 0 4rem $desaturateBlue;
+      }
+    }
+  }
+  @include breakpoints($xxl) {
+    padding: 10rem 10rem 20rem;
+
+    .col-2 {
+      .btn {
+        width: 25rem;
+        height: 25rem;
+      }
+    }
+  }
+
+  @include breakpoints($xl) {
+    .col-2 {
+      justify-content: flex-end;
+    }
+  }
+
+  @include breakpoints($lg) {
+    flex-wrap: wrap;
+    padding: 14rem 10rem 8rem;
+
+    .col-1 {
+      flex-basis: 100%;
+      text-align: center;
+
+      .paragraph {
+        width: 60%;
+        margin: 0 auto;
+      }
+    }
+
+    .col-2 {
+      flex-basis: 100%;
+      height: 50rem;
+      justify-content: center;
+    }
+  }
+
+  @include breakpoints($md) {
+    @include background(
+      "../../../public/assets/home/background-home-tablet.jpg"
+    );
+    padding: 14rem 6rem 8rem;
+
+    .col-1 {
+      .paragraph {
+        width: 70%;
+      }
+    }
+  }
+
+  @include breakpoints($sm) {
+    @include background(
+      "../../../public/assets/home/background-home-mobile.jpg"
+    );
+
+    padding: 14rem 3rem 8rem;
+
+    .col-1 {
+      .sub-heading-1 {
+        font-size: $fs-6;
+      }
+
+      .heading-1 {
+        font-size: $fs-2;
+      }
+
+      .paragraph {
+        width: 100%;
+      }
+    }
+  }
+}
